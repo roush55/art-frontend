@@ -11,6 +11,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
 import ArtIndex from './auth/components/art/ArtIndex'
 import CreateArt from './auth/components/art/CreateArt'
+import EditArt from './auth/components/art/EditArt'
 
 class App extends Component {
   constructor () {
@@ -55,7 +56,10 @@ class App extends Component {
   
            <AuthenticatedRoute user={user} path='/items'render={()=>(
             <ArtIndex user={user}/> )}/>
-            <AuthenticatedRoute user={user} path='/create'render={()=>(<CreateArt user={user}/>)}/>
+            <AuthenticatedRoute user={user} exact path='/create'render={()=>(<CreateArt user={user}/>)}/>
+            <AuthenticatedRoute  user={user}exact  path='/items/:id/edit' render={(props) => (
+            <EditArt user={user} />
+          )}/>
             
         </main>
       </React.Fragment>
