@@ -7,7 +7,7 @@ method: "get",
 headers:{"Authorization":`Bearer ${user.token}`}
 })
 }
-//create  new item
+//create new item
 export const create = (user,newItem) => {
     return axios({
         method:'post',
@@ -20,6 +20,7 @@ export const create = (user,newItem) => {
         }
     })
 }
+//update item 
 
 export const update = (user,updateItem,itemId) => {
     return axios({
@@ -33,7 +34,9 @@ export const update = (user,updateItem,itemId) => {
         }
     })
 }
-export const show=(user,itemId)=>{
+
+//to show item
+export const Show=(user,itemId)=>{
 return axios({
     method:"get",
     url:apiUrl+`/items/${itemId}`,
@@ -44,10 +47,11 @@ return axios({
 })}
  
 //to delete item 
-export const destroy = (user,itemId) => {
+export const destroy=(user,itemId) => {
+    
     return axios({
         method:'delete',
-        url:apiUrl + `/items/${itemId}`,
+        url:apiUrl +`/items/${itemId}`,
         headers:{
             "Authorization":`Bearer ${user.token}`
         }
@@ -56,4 +60,3 @@ export const destroy = (user,itemId) => {
 }
 
 
-//to update item

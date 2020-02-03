@@ -8,6 +8,7 @@ class CreateArt extends Component {
             name: "",
             price:0,
             img:""
+            
            
         }
     }
@@ -20,7 +21,7 @@ class CreateArt extends Component {
         })
     }
     onSubmitHandler = event => {
-        event.preventDefault()
+        event.preventDefault();
         const newItem = this.state.artForm
         const user = this.props.user
         create(user,newItem)
@@ -33,16 +34,16 @@ class CreateArt extends Component {
                 <div>
                     <form onSubmit={this.onSubmitHandler}>
                         <label>Name:</label>
-                        <input name="name" value={this.state.artForm.name} onChange={this.onChangeHandler} />
+                        <input  className="form-control" name="name" value={this.state.artForm.name} onChange={this.onChangeHandler} />
                         <br/>
                         <label>Price:</label>
-                        <input name="price" value={this.state.artForm.price} onChange={this.onChangeHandler}type="number" />
+                        <input className="form-control" name="price" value={this.state.artForm.price} onChange={this.onChangeHandler}type="number" />
                         <br/>
         
                         <label>Img:</label>
-                        <input name="img" value={this.state.artForm.img} onChange={this.onChangeHandler} />
+                        <input className="form-control" name="img" value={this.state.artForm.img} onChange={this.onChangeHandler} />
                         <br />
-                        <input type="submit"/>
+                        <button className="btn-secondary" type="submit">Create</button>
                     </form>
                 </div>
             )

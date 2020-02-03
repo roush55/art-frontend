@@ -2,7 +2,9 @@ $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
-
+body{
+  font-family:"Gill Sans", sans-serif; ;
+}
 .flash-success,
 .flash-warning,
 .flash-error {

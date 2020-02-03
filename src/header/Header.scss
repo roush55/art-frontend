@@ -1,6 +1,9 @@
 $charcoal: #bbb;
 
 .main-header {
+  background-color:black;
+  color:white ;
+  font-family:"Gill Sans", sans-serif;
   align-items: center;
   border-bottom: 1px solid $charcoal;
   display: flex;

@@ -7,6 +7,8 @@ const authenticatedOptions = (
   <React.Fragment>
     <Link to="/change-password">Change Password</Link>
     <Link to="/sign-out">Sign Out</Link>
+    <Link to ='/create'> NewArt</Link>
+    <Link to ='/items'>My Art</Link>
   </React.Fragment>
 )
 
