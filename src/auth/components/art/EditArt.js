@@ -40,7 +40,6 @@ class EditArt extends Component {
     
         handleSubmit = (event) =>{
             event.preventDefault();
-            console.log(this.props)
             const user = this.props.user;
             const itemId = this.props.match.params.id;
             const updateItem = this.state.artForm;

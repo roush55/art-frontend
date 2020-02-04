@@ -24,7 +24,7 @@ export const create = (user,newItem) => {
 
 export const update = (user,updateItem,itemId) => {
     return axios({
-        method:'patch',
+        method:'put',
         url:apiUrl + `/items/${itemId}`,
         headers:{
             "Authorization":`Bearer ${user.token}`
@@ -36,7 +36,7 @@ export const update = (user,updateItem,itemId) => {
 }
 
 //to show item
-export const Show=(user,itemId)=>{
+export const Show =(user,itemId)=>{
 return axios({
     method:"get",
     url:apiUrl+`/items/${itemId}`,

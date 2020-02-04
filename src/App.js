@@ -15,6 +15,7 @@ import CreateArt from './auth/components/art/CreateArt'
 import ArtShow from  './auth/components/art/ArtShow'
 import EditArt from './auth/components/art/EditArt'
 import CarouselPage from './auth/components/imges/CarouselPage'
+import Footer from './auth/components/footer/Footer'
 
 class App extends Component {
   constructor () {
@@ -59,7 +60,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
   
-           <AuthenticatedRoute user={user} path='/items'render={()=>(
+           <AuthenticatedRoute user={user}  exact path='/items'render={()=>(
             <ArtIndex user={user}/> )}/>
             <AuthenticatedRoute user={user} exact path='/create'render={()=>(<CreateArt user={user}/>)}/>
             
@@ -68,10 +69,14 @@ class App extends Component {
             <ArtShow user={user} itemId={props.match.params.id}/>
           )}/>
             <AuthenticatedRoute  user={user} path='/items/:id/edit' render={(props) => (
-            <EditArt user={user} />
+            <EditArt user={user} itemId={props.match.params.id} />
           )}/>
             
         </main>
+        <footer>
+          <Footer/>
+        </footer>
+        
       </React.Fragment>
     )
   }

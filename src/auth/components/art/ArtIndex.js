@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {index,destroy} from './api';
+import {index,destroy,Show} from './api';
 import'./art.scss'
+import ArtShow from './ArtShow';
 
 class ArtIndex extends Component {
     state= {
@@ -59,9 +60,9 @@ class ArtIndex extends Component {
                <button className="btn-secondary" onClick={() => this.destroy(item._id)}>Delete</button><br/>
                <Link to={`/items/${item._id}`}><button className="btn-secondary">Show</button></Link>
                 </div>
-                
+              
                 </div>
-              ))}
+                  ))}
                 </div>
     
                 </div>

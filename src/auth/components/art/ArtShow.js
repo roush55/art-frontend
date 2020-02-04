@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 import {Show} from './api'
 
 class ArtShow extends Component {
@@ -7,20 +7,24 @@ class ArtShow extends Component {
       }
     
     componentDidMount(){
-        const user = this.props.user;
+        const user = this.props.user
+        console.log(user)
         const itemId = this.props.itemId;
         Show(user,itemId)
         .then((res) => {
-            const showItem = res.data.item;
+            const ShowItem = res.data.item;
+            console.log(res.data.item)
             this.setState({
-                item:showItem
+                item:ShowItem
             })
         })
         .catch((error) => console.log(error))
     }
     
     render() { 
+        
         return (
+        
          <div>
         <h1>{this.state.item.name}</h1>
         <h3>{this.state.item.price}</h3>
@@ -30,4 +34,4 @@ class ArtShow extends Component {
     }
 }
  
-export default ArtShow;
+export default withRouter(ArtShow);
