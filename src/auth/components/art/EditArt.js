@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import{Show,update} from './api'
 import {withRouter} from 'react-router-dom'
+import'./art.scss'
 
 //form to update items details 
 class EditArt extends Component {
@@ -60,7 +61,7 @@ class EditArt extends Component {
                     <input className="form-control" onChange={this.handleChange}  name="price" value={this.state.artForm.price} type="Number"/>
                     <label>Image</label>
                     <input className="form-control" onChange={this.handleChange}  name="img" value={this.state.artForm.img}type="text"/><br/>
-                    <button className="btn-secondary" type="submit">Update</button>
+                    <button className="btn btn-secondary" type="submit">Update</button>
             </form>
             )
         }}

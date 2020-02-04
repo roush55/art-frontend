@@ -16,6 +16,7 @@ import ArtShow from  './auth/components/art/ArtShow'
 import EditArt from './auth/components/art/EditArt'
 import CarouselPage from './auth/components/imges/CarouselPage'
 import Footer from './auth/components/footer/Footer'
+import Auction from './auth/components/art/Auction'
 
 class App extends Component {
   constructor () {
@@ -69,8 +70,9 @@ class App extends Component {
             <ArtShow user={user} itemId={props.match.params.id}/>
           )}/>
             <AuthenticatedRoute  user={user} path='/items/:id/edit' render={(props) => (
-            <EditArt user={user} itemId={props.match.params.id} />
-          )}/>
+            <EditArt user={user} itemId={props.match.params.id} />)}/>
+            <AuthenticatedRoute  user={user} path='/auction' render={(props) => (
+              <Auction user={user} />)}/>
             
         </main>
         <footer>

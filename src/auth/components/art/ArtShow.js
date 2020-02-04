@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link,withRouter} from 'react-router-dom'
 import {Show} from './api'
+import'./art.scss'
 
 class ArtShow extends Component {
     state = { item:{} 
@@ -10,6 +11,7 @@ class ArtShow extends Component {
         const user = this.props.user
         console.log(user)
         const itemId = this.props.itemId;
+        console.log(itemId)
         Show(user,itemId)
         .then((res) => {
             const ShowItem = res.data.item;
@@ -24,13 +26,18 @@ class ArtShow extends Component {
     render() { 
         
         return (
-        
-         <div>
-        <h1>{this.state.item.name}</h1>
-        <h3>{this.state.item.price}</h3>
+           <div className="container">
+            <div class="card">
+  
+            <div className="card-body">
+        <h1 className="card-text">{this.state.item.name}</h1>
+        </div >
+        <div>
+        <h4 className="card-text"> price{this.state.item.price}$</h4></div>
         <img src={this.state.item.img} alt="" />
-        <Link to={`/items/${this.state.item._id}/edit`}><button className="btn-secondary">Edit</button></Link>
-        </div> );
+        <Link to={`/items/${this.state.item._id}/edit`}><button className="button2"></button></Link>
+        
+        </div> </div> );
     }
 }
  

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
  import {withRouter} from 'react-router-dom'
 import {create} from './api'
+import './art.scss'
 
 class CreateArt extends Component {
     state = {
@@ -43,7 +44,7 @@ class CreateArt extends Component {
                         <label>Img:</label>
                         <input className="form-control" name="img" value={this.state.artForm.img} onChange={this.onChangeHandler} />
                         <br />
-                        <button className="btn-secondary" type="submit">Create</button>
+                        <button className="btn btn-secondary" type="submit">Create</button>
                     </form>
                 </div>
             )

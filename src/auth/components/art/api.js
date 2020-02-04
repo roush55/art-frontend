@@ -40,7 +40,7 @@ export const Show =(user,itemId)=>{
 return axios({
     method:"get",
     url:apiUrl+`/items/${itemId}`,
-    header:{
+    headers:{
         "Authorization":`Bearer ${user.token}`
     }
 
