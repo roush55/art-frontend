@@ -17,6 +17,7 @@ import EditArt from './auth/components/art/EditArt'
 import CarouselPage from './auth/components/imges/CarouselPage'
 import Footer from './auth/components/footer/Footer'
 import Auction from './auth/components/art/Auction'
+import AllArt from './auth/components/art/AllArt'
 
 class App extends Component {
   constructor () {
@@ -54,9 +55,13 @@ class App extends Component {
           )} />
 
           <Route  exact path='/' render={()=>(<CarouselPage/>)}/>
+          <Route  exact path='/items/all' render={() => (
+            <AllArt/>
+          )}/>
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
           )} />
+          
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
@@ -75,9 +80,9 @@ class App extends Component {
               <Auction user={user} />)}/>
             
         </main>
-        <footer>
+        
           <Footer/>
-        </footer>
+        
         
       </React.Fragment>
     )

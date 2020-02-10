@@ -1,12 +1,15 @@
 import axios from 'axios'
 import apiUrl from '../../../apiConfig'
-//to show all items
+//to show all items 
 export const index = (user) => {
 return axios({url:apiUrl + "/items",
 method: "get",
 headers:{"Authorization":`Bearer ${user.token}`}
 })
 }
+
+
+
 //create new item
 export const create = (user,newItem) => {
     return axios({
@@ -45,6 +48,7 @@ return axios({
     }
 
 })}
+ 
  
 //to delete item 
 export const destroy=(user,itemId) => {

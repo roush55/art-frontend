@@ -25,9 +25,9 @@
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
+    "start": "nodemon scripts/start.js",
+    "build": "nodemon scripts/build.js",
+    "test": "nodemon scripts/test.js --env=jsdom",
     "make-standard": "eslint --fix ./src;exit 0",
     "nag": "eslint ./src;exit 0",
     "deploy": "sh scripts/deploy.sh"
