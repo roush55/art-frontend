@@ -3,10 +3,6 @@
   "homepage": "https://<USERNAME>.github.io/<REPO NAME>",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "6.12.0",
-    "node": "12.13.0"
-  },
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
