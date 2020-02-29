@@ -4,7 +4,7 @@
 # react-auth-template
 
 
-## Installation
+## Installation:
 
 1. [Download](../../archive/master.zip) this template.
 1. Unzip and rename the template directory (`unzip ~/Downloads/react-auth-template-master.zip`).
